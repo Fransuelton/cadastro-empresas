@@ -14,12 +14,14 @@ class EmpresaController extends Controller
         $data = $request->validated();
 
         if (!empty($data['segmento_outro'])) {
-        $segmento = Segmento::firstOrCreate(['nome' => $data['segmento_outro']]);
-        $data['segmento_id'] = $segmento->id;
-    }
+            $segmento = Segmento::firstOrCreate(['nome' => $data['segmento_outro']]);
+            $data['segmento_id'] = $segmento->id;
+        }
 
-    $empresa = Empresa::create($data);
+        unset($data['segmento_outro']);
 
-    return response()->json(['message' => 'Empresa cadastrada com sucesso!', 'empresa' => $empresa], 201);
+        $empresa = Empresa::create($data);
+
+        return response()->json(['message' => 'Empresa cadastrada com sucesso!', 'empresa' => $empresa], 201);
     }
 }
