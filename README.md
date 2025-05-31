@@ -91,6 +91,31 @@ npm run build
 yarn build
 ```
 
+## Rotas da aplicação 📍 
+
+A aplicação possui as seguintes rotas:
+
+| Rota               | Descrição                                          
+|----------------------|-----------------------------------------------------
+| <kbd>/api/segmentos</kbd>     | Listagem de todos os segmentos de empresas
+| <kbd>/api/empresas</kbd>     | Cadastro de empresas
+
+### Exemplo de Requisição para cadastro de uma empresa
+
+```json
+{
+  "nome": "Empresa Inovadora",
+  "cep": "87654321",
+  "rua": "Rua das Árvores",
+  "numero": "202",
+  "bairro": "Jardins",
+  "estado": "RJ",
+  "numero_whatsapp": "21999997777",
+  "cnpj_cpf": "98765432100",
+  "segmento_outro": "Aeroporto"
+}
+```
+
 ## 📁 Estrutura Principal do Projeto
 
 ```
