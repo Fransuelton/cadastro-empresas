@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\CpfOuCnpj;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreEmpresaRequest extends FormRequest
@@ -11,7 +12,7 @@ class StoreEmpresaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,10 +30,10 @@ class StoreEmpresaRequest extends FormRequest
             'numero' => 'required|string',
             'bairro' => 'required|string',
             'estado' => 'required|string',
-            'whatsapp' => 'required|string',
-            'documento' => ['required', 'string', new \App\Rules\CpfOuCnpj],
+            'numero_whatsapp' => 'required|string',
+            'cnpj_cpf' => ['required', 'string', new CpfOuCnpj],
             'segmento_id' => 'nullable|exists:segmentos,id',
-            'novo_segmento' => 'nullable|string|max:255',
+            'segmento_outro' => 'nullable|string|max:255',
         ];
     }
 }
