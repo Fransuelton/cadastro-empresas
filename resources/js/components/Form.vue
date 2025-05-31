@@ -7,28 +7,23 @@
             </div>
 
             <div>
-                <label>Número do WhatsApp *</label>
-                <input v-model="form.numero_whatsapp" required placeholder="" />
-            </div>
-
-            <div>
                 <label>CEP *</label>
-                <input v-model="form.cep" required placeholder="" />
+                <input v-model="form.cep" required placeholder="00000-000" />
             </div>
 
             <div>
                 <label>Rua *</label>
-                <input v-model="form.rua" required />
+                <input v-model="form.rua" required placeholder="Ex.: Rua Exemplo" />
             </div>
 
             <div>
                 <label>Número *</label>
-                <input v-model="form.numero" required />
+                <input v-model="form.numero" required placeholder="Ex.: 123" />
             </div>
 
             <div>
                 <label>Bairro *</label>
-                <input v-model="form.bairro" required />
+                <input v-model="form.bairro" required placeholder="Ex.: Bairro Exemplo" />
             </div>
 
             <div>
@@ -42,8 +37,13 @@
             </div>
 
             <div>
+                <label>Número do WhatsApp *</label>
+                <input v-model="form.numero_whatsapp" required placeholder="Ex.: (00) 90000-0000" />
+            </div>
+
+            <div>
                 <label>CNPJ/CPF *</label>
-                <input v-model="form.cnpj_cpf" required />
+                <input v-model="form.cnpj_cpf" required placeholder="" />
             </div>
 
             <div>
@@ -88,34 +88,34 @@ export default {
                 segmento_id: '',
             },
             estados: [
-                    { uf: 'AC', nome: 'Acre' },
-                    { uf: 'AL', nome: 'Alagoas' },
-                    { uf: 'AP', nome: 'Amapá' },
-                    { uf: 'AM', nome: 'Amazonas' },
-                    { uf: 'BA', nome: 'Bahia' },
-                    { uf: 'CE', nome: 'Ceará' },
-                    { uf: 'DF', nome: 'Distrito Federal' },
-                    { uf: 'ES', nome: 'Espírito Santo' },
-                    { uf: 'GO', nome: 'Goiás' },
-                    { uf: 'MA', nome: 'Maranhão' },
-                    { uf: 'MT', nome: 'Mato Grosso' },
-                    { uf: 'MS', nome: 'Mato Grosso do Sul' },
-                    { uf: 'MG', nome: 'Minas Gerais' },
-                    { uf: 'PA', nome: 'Pará' },
-                    { uf: 'PB', nome: 'Paraíba' },
-                    { uf: 'PR', nome: 'Paraná' },
-                    { uf: 'PE', nome: 'Pernambuco' },
-                    { uf: 'PI', nome: 'Piauí' },
-                    { uf: 'RJ', nome: 'Rio de Janeiro' },
-                    { uf: 'RN', nome: 'Rio Grande do Norte' },
-                    { uf: 'RS', nome: 'Rio Grande do Sul' },
-                    { uf: 'RO', nome: 'Rondônia' },
-                    { uf: 'RR', nome: 'Roraima' },
-                    { uf: 'SC', nome: 'Santa Catarina' },
-                    { uf: 'SP', nome: 'São Paulo' },
-                    { uf: 'SE', nome: 'Sergipe' },
-                    { uf: 'TO', nome: 'Tocantins' },
-                ],
+                { uf: 'AC', nome: 'Acre' },
+                { uf: 'AL', nome: 'Alagoas' },
+                { uf: 'AP', nome: 'Amapá' },
+                { uf: 'AM', nome: 'Amazonas' },
+                { uf: 'BA', nome: 'Bahia' },
+                { uf: 'CE', nome: 'Ceará' },
+                { uf: 'DF', nome: 'Distrito Federal' },
+                { uf: 'ES', nome: 'Espírito Santo' },
+                { uf: 'GO', nome: 'Goiás' },
+                { uf: 'MA', nome: 'Maranhão' },
+                { uf: 'MT', nome: 'Mato Grosso' },
+                { uf: 'MS', nome: 'Mato Grosso do Sul' },
+                { uf: 'MG', nome: 'Minas Gerais' },
+                { uf: 'PA', nome: 'Pará' },
+                { uf: 'PB', nome: 'Paraíba' },
+                { uf: 'PR', nome: 'Paraná' },
+                { uf: 'PE', nome: 'Pernambuco' },
+                { uf: 'PI', nome: 'Piauí' },
+                { uf: 'RJ', nome: 'Rio de Janeiro' },
+                { uf: 'RN', nome: 'Rio Grande do Norte' },
+                { uf: 'RS', nome: 'Rio Grande do Sul' },
+                { uf: 'RO', nome: 'Rondônia' },
+                { uf: 'RR', nome: 'Roraima' },
+                { uf: 'SC', nome: 'Santa Catarina' },
+                { uf: 'SP', nome: 'São Paulo' },
+                { uf: 'SE', nome: 'Sergipe' },
+                { uf: 'TO', nome: 'Tocantins' },
+            ],
             segmentos: [],
             novoSegmento: '',
             mensagem: '',
@@ -142,7 +142,7 @@ export default {
 
             fetch('http://127.0.0.1:8000/api/empresas', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
                 body: JSON.stringify(payload),
             })
                 .then((res) => res.json())
