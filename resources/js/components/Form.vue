@@ -78,7 +78,6 @@ export default {
         return {
             form: {
                 nome: '',
-                endereco: 'ds',
                 cep: '',
                 rua: '',
                 numero: '',
@@ -175,7 +174,6 @@ export default {
                 numero_whatsapp: '',
                 cnpj_cpf: '',
                 segmento_id: '',
-                endereco: '',
             };
             this.novoSegmento = '';
         },

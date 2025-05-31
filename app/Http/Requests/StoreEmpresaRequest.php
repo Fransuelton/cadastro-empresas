@@ -24,7 +24,6 @@ class StoreEmpresaRequest extends FormRequest
     {
         return [
             'nome' => 'required|string|max:255',
-            'endereco' => 'required|string',
             'cep' => 'required|string|size:8',
             'rua' => 'required|string',
             'numero' => 'required|string',
@@ -41,7 +40,6 @@ class StoreEmpresaRequest extends FormRequest
 {
     return [
         'nome.required' => 'O nome da empresa é obrigatório.',
-        'endereco.required' => 'O endereço é obrigatório.',
         'cep.required' => 'O CEP é obrigatório.',
         'cep.size' => 'O CEP deve ter exatamente 8 dígitos.',
         'rua.required' => 'A rua é obrigatória.',
