@@ -36,4 +36,23 @@ class StoreEmpresaRequest extends FormRequest
             'segmento_outro' => 'nullable|string|max:255',
         ];
     }
+
+    public function messages(): array
+{
+    return [
+        'nome.required' => 'O nome da empresa é obrigatório.',
+        'endereco.required' => 'O endereço é obrigatório.',
+        'cep.required' => 'O CEP é obrigatório.',
+        'cep.size' => 'O CEP deve ter exatamente 8 dígitos.',
+        'rua.required' => 'A rua é obrigatória.',
+        'numero.required' => 'O número é obrigatório.',
+        'bairro.required' => 'O bairro é obrigatório.',
+        'estado.required' => 'O estado é obrigatório.',
+        'numero_whatsapp.required' => 'O número do WhatsApp é obrigatório.',
+        'cnpj_cpf.required' => 'O CPF ou CNPJ é obrigatório.',
+        'segmento_id.exists' => 'O segmento selecionado não é válido.',
+        'segmento_outro.max' => 'O nome do novo segmento não pode ter mais de 255 caracteres.',
+    ];
+}
+
 }
