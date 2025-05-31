@@ -26,7 +26,7 @@ class EmpresaController extends Controller
 
 
             return response()->json([
-                'sucess' => true,
+                'success' => true,
                 'message' => 'Empresa cadastrada com sucesso!',
                 'data' => $empresa
             ], 201);
